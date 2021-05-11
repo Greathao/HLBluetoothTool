@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/Greathao/HLBluetoothTool.git', :tag => "0.0.1" } //git路径、指定tag号
   s.platform = :ios 
   s.source_files = 'HLBluetoothTool/*'  //库的源代码文件
-  s.frameworks = 'Foundation','CoreBluetooth'  //依赖的framework
+  s.frameworks = "Foundation","CoreBluetooth"  //依赖的framework
   s.requires_arc = true
 end
