@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.platform = :ios 
   
 #库的源代码文件
-  s.source_files = "HLBluetoothTool"
+  s.source_files = "HLBluetoothTool/*.{h,m}"
   
 #依赖的framework 
   s.frameworks = "Foundation","CoreBluetooth"  
