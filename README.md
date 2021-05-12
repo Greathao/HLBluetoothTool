@@ -22,7 +22,7 @@ pod 'HLBluetoothTool'
 
 ## Author
 
-Greathao, liuhao@mrhi.com
+Greathao, 704550535@qq.com
 
 ## License
 
