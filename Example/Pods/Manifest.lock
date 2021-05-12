@@ -1,0 +1,27 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - HLBluetoothTool (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - HLBluetoothTool (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  HLBluetoothTool:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  HLBluetoothTool: 56c40f88dce89cd0ab051c6c9c82389392695759
+
+PODFILE CHECKSUM: 7b5fe7139703cc83e7c6f5f6a4f58115ad42e73e
+
+COCOAPODS: 1.10.1

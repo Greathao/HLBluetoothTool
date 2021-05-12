@@ -1,0 +1,6 @@
+framework module HLBluetoothTool {
+  umbrella header "HLBluetoothTool-umbrella.h"
+
+  export *
+  module * { export * }
+}
