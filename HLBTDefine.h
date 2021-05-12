@@ -33,7 +33,6 @@ typedef enum : NSInteger {
     HLBTScanEndReasonOff = 101,
     ///扫描时等待用户去开启蓝牙 时间超时 还是未开启
     HLBTScanEndReasonWaitingOpenTimeOut,
-    
     ///连接设备时触发的中断
     HLBTScanEndReasonConnect,
     ///设备到了规定的扫描时间

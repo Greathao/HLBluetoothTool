@@ -154,7 +154,9 @@
 #pragma -mark CBPeripheralDelegate
 
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
-    
+    if ([self.delegate respondsToSelector:@selector(btDevice:didDiscoverServices:)]) {
+        [self.delegate btDevice:self didDiscoverServices:error];
+    }
     HLBTCentralMgr * center = [self.delegate BTDeviceGetBTCentralManager];
     NSArray <CBUUID*>* uuids = [center.btfilter getFilterCharacteristicUUIDs];
     NSLog(@"%@",uuids);

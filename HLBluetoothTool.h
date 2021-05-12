@@ -30,17 +30,22 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param device 连接的设备实体
 - (void)btToolIsConnected:(BOOL)isConnected withDevice:(HLBTDevice *)device;
 
+/// 设备扫描服务的响应
+/// @param device 设备
+/// @param error 错误
+- (void)btToolDiscoverServicesWithDevice:(HLBTDevice*)device error:(NSError *)error;
+
 /// 扫描完设备特征之后的响应
 /// @param device 设备
-- (void)btToolDiscoverCharacteristicsEndWithDevice:(HLBTDevice*)device;
+/// @param error 错误
+- (void)btToolDiscoverCharacteristicsEndWithDevice:(HLBTDevice*)device error:(NSError *)error;
  
 /// 订阅消息的响应
 /// @param device 设备
 /// @param uuidStr 特征标识
 /// @param error  错误
 - (void)btToolNotificationStatefromDevice:(HLBTDevice*)device characteristicUUIDsString:(NSString*)uuidStr error:(NSError *)error;
-
-
+ 
 /// 当写入为它的时候可用此检测是否写入成功
 /// CBCharacteristicWriteWithResponse:
 /// @param device 设备

@@ -130,8 +130,8 @@ static HLBluetoothTool * blueTooth = nil;
 
 - (void)addDiscoverPeripherals:(HLBTDevice *)device{
     if (![self.discoverPeripherals containsObject:device]) {
-        for (HLBTDevice * device in self.discoverPeripherals) {
-            if ([device.identifierUUIDString isEqualToString:device.identifierUUIDString]) {
+        for (HLBTDevice * devic in self.discoverPeripherals) {
+            if ([devic.identifierUUIDString isEqualToString:device.identifierUUIDString]) {
                 return;
             }
         }
@@ -141,8 +141,8 @@ static HLBluetoothTool * blueTooth = nil;
 
 - (void)addConnectPeripherals:(HLBTDevice *)device{
     if (![self.connectPeripherals containsObject:device]) {
-        for (HLBTDevice * device in self.connectPeripherals) {
-            if ([device.identifierUUIDString isEqualToString:device.identifierUUIDString]) {
+        for (HLBTDevice * devic in self.connectPeripherals) {
+            if ([devic.identifierUUIDString isEqualToString:device.identifierUUIDString]) {
                 return;
             }
         }
@@ -151,8 +151,8 @@ static HLBluetoothTool * blueTooth = nil;
 }
 - (void)removeConnectPeripheral:(HLBTDevice*)device{
     if ([self.connectPeripherals containsObject:device]) {
-        for (HLBTDevice * device in self.connectPeripherals) {
-            if ([device.identifierUUIDString isEqualToString:device.identifierUUIDString]) {
+        for (HLBTDevice * devic in self.connectPeripherals) {
+            if ([devic.identifierUUIDString isEqualToString:device.identifierUUIDString]) {
                 [self.connectPeripherals removeObject:device];
                 return;
             }
@@ -272,8 +272,8 @@ static HLBluetoothTool * blueTooth = nil;
 }
 
 -(void)btDevice:(HLBTDevice*)device didDiscoverCharacteristics:(NSArray<CBCharacteristic*>* )characteristic error:(nullable NSError *)error{
-    if ([self.delegate respondsToSelector:@selector(btToolDiscoverCharacteristicsEndWithDevice:)]) {
-        [self.delegate btToolDiscoverCharacteristicsEndWithDevice:device];
+    if ([self.delegate respondsToSelector:@selector(btToolDiscoverCharacteristicsEndWithDevice:error:)]) {
+        [self.delegate btToolDiscoverCharacteristicsEndWithDevice:device error:error];
     }
 }
 
@@ -303,6 +303,13 @@ static HLBluetoothTool * blueTooth = nil;
     if ([self.delegate respondsToSelector:@selector(btToolNotificationStatefromDevice:characteristicUUIDsString:error:)]) {
         [self.delegate btToolNotificationStatefromDevice:device characteristicUUIDsString:characteristic.UUID.UUIDString error:error];
     }
+}
+-(void)btDevice:(HLBTDevice*)device didDiscoverServices:(NSError *)error;
+{
+    if ([self.delegate respondsToSelector:@selector(btToolDiscoverServicesWithDevice:error:)]) {
+        [self.delegate btToolDiscoverServicesWithDevice:device error:error];
+    }
+    
 }
 
 @end

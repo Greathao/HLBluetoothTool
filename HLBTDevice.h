@@ -21,7 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 -(HLBTCentralMgr*)BTDeviceGetBTCentralManager;
 
 @optional
-///扫描完特征回调
+
+///发现服务 /或错误
+-(void)btDevice:(HLBTDevice*)device didDiscoverServices:(NSError *)error;
+
+///发现完特征 回调
 -(void)btDevice:(HLBTDevice*)device didDiscoverCharacteristics:(NSArray<CBCharacteristic*>* )characteristic error:(nullable NSError *)error;
 ///订阅响应
 -(void)btDevice:(HLBTDevice*)device didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error;
