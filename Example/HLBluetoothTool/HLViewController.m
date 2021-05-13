@@ -61,7 +61,7 @@ static NSString *const tabViewCellID = @"tabViewcellID";
 /// @param devices 扫描到的设备
 /// @param reason 停止扫描的原因
 - (void)btToolScanEndResbonsWithDevice:(NSArray<HLBTDevice *> *__nullable)devices why:(HLBTScanEndReason)reason{
-    
+  
 }
 
 /// 设备连接状态响应 成功/失败
