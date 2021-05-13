@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		041CB2979D8F5B242A592EB1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		041CB2979D8F5B242A592EB1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		47197E85A60E4E9D814CFEA0 /* Pods-HLBluetoothTool_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLBluetoothTool_Tests.release.xcconfig"; path = "Target Support Files/Pods-HLBluetoothTool_Tests/Pods-HLBluetoothTool_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		56E541DE08A9B1E8AF94375C /* Pods-HLBluetoothTool_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLBluetoothTool_Example.release.xcconfig"; path = "Target Support Files/Pods-HLBluetoothTool_Example/Pods-HLBluetoothTool_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* HLBluetoothTool_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HLBluetoothTool_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,13 +58,13 @@
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
-		600558FD184CD52DC3F2CDB2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		600558FD184CD52DC3F2CDB2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76D49AA7EB1294D42E5B1AEC /* Pods-HLBluetoothTool_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLBluetoothTool_Tests.debug.xcconfig"; path = "Target Support Files/Pods-HLBluetoothTool_Tests/Pods-HLBluetoothTool_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F57034ADFCE2AACD3733121 /* Pods-HLBluetoothTool_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLBluetoothTool_Example.debug.xcconfig"; path = "Target Support Files/Pods-HLBluetoothTool_Example/Pods-HLBluetoothTool_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		BA16DE3DF8188D391BA9EFF5 /* HLBluetoothTool.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HLBluetoothTool.podspec; path = ../HLBluetoothTool.podspec; sourceTree = "<group>"; };
+		BA16DE3DF8188D391BA9EFF5 /* HLBluetoothTool.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HLBluetoothTool.podspec; path = ../HLBluetoothTool.podspec; sourceTree = "<group>"; };
 		DA1CA678B8EC57A3065CBD86 /* Pods_HLBluetoothTool_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLBluetoothTool_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB06FDFE0428624773E0C16 /* Pods_HLBluetoothTool_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLBluetoothTool_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -193,7 +193,6 @@
 				76D49AA7EB1294D42E5B1AEC /* Pods-HLBluetoothTool_Tests.debug.xcconfig */,
 				47197E85A60E4E9D814CFEA0 /* Pods-HLBluetoothTool_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -249,6 +248,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Greathao;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = EHJ3PE6UKB;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -259,6 +261,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -513,11 +516,12 @@
 			baseConfigurationReference = 8F57034ADFCE2AACD3733121 /* Pods-HLBluetoothTool_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EHJ3PE6UKB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HLBluetoothTool/HLBluetoothTool-Prefix.pch";
 				INFOPLIST_FILE = "HLBluetoothTool/HLBluetoothTool-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = www.packagingtest2.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
@@ -529,11 +533,12 @@
 			baseConfigurationReference = 56E541DE08A9B1E8AF94375C /* Pods-HLBluetoothTool_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EHJ3PE6UKB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HLBluetoothTool/HLBluetoothTool-Prefix.pch";
 				INFOPLIST_FILE = "HLBluetoothTool/HLBluetoothTool-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = www.packagingtest2.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;

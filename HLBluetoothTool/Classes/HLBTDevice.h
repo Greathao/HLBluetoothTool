@@ -58,6 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (CBCharacteristic*__nullable)getCharacteristicWithUUIDStr:(NSString*__nonnull)wuuid;
 - (void)addNotificationCharacteristicWithUUID:(NSArray*__nonnull)uuids;
 - (void)cancelNotificationCharacteristicWithUUID:(NSArray*__nonnull)uuids;
+- (void)readValueForCharacteristicWithUUIDStr:(NSString*__nonnull)wuuid;
  
 @end
 

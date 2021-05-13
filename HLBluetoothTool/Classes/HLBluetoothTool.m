@@ -9,7 +9,7 @@
 #import "HLBluetoothTool.h"
 #import "HLBTCentralMgr.h"
 #import "HLBTFilter.h"
-static NSTimeInterval defaultScanTime = 1;
+static NSTimeInterval defaultScanTime = 3;
 static NSTimeInterval defaultPingTime = 5;
 
 @interface HLBluetoothTool ()<HLBTCentralMgrDelegate,HLBTDeviceDelegate>
@@ -49,7 +49,7 @@ static HLBluetoothTool * blueTooth = nil;
         return;
     }
     
-    if (_centerManager.cbCentralManager.state!=CBManagerStatePoweredOn&&!self.pingBTStateSeconds) {
+    if (_centerManager.cbCentralManager.state!=CBCentralManagerStatePoweredOn&&!self.pingBTStateSeconds) {
         if ([self.delegate respondsToSelector:@selector(btToolScanEndResbonsWithDevice:why:)]) {
             [self.delegate btToolScanEndResbonsWithDevice:nil why:HLBTScanEndReasonOff];
         }
@@ -88,7 +88,7 @@ static HLBluetoothTool * blueTooth = nil;
 #pragma - mark private
 
 -(void)pingBTStateOnResbons:(void(^)(void))BTStateOnResbons everySecond:(NSTimeInterval)second{
-    if (_centerManager.cbCentralManager.state==CBManagerStatePoweredOn) {
+    if (_centerManager.cbCentralManager.state==CBCentralManagerStatePoweredOn) {
         if (BTStateOnResbons) {
             BTStateOnResbons();
         }
@@ -98,7 +98,7 @@ static HLBluetoothTool * blueTooth = nil;
     _pingTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
     dispatch_source_set_timer(_pingTimer, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 0.0);
     dispatch_source_set_event_handler(_pingTimer, ^{
-        if (self->_centerManager.cbCentralManager.state==CBManagerStatePoweredOn) {
+        if (self->_centerManager.cbCentralManager.state==CBCentralManagerStatePoweredOn) {
             dispatch_source_cancel(self->_pingTimer);
             self->_pingTimer = nil;
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -252,7 +252,7 @@ static HLBluetoothTool * blueTooth = nil;
             break;
     }
     if ([self.delegate respondsToSelector:@selector(BTState:describe:)]) {
-        [self.delegate BTState:central.state == CBManagerStatePoweredOn describe:stateStr];
+        [self.delegate BTState:central.state == CBCentralManagerStatePoweredOn describe:stateStr];
     }
 }
 

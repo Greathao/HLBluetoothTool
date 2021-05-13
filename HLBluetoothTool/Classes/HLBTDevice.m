@@ -55,9 +55,10 @@
     if (charact.properties & CBCharacteristicPropertyWriteWithoutResponse
         ||charact.properties & CBCharacteristicPropertyWrite
         ||charact.properties & CBCharacteristicPropertyAuthenticatedSignedWrites) {
-        CBCharacteristicWriteType type = CBCharacteristicWriteWithResponse;
-        if (charact.properties & CBCharacteristicPropertyWriteWithoutResponse) {
-            type = CBCharacteristicWriteWithoutResponse;
+        ///默认是outResponse类型 如是CBCharacteristicWriteWithResponse 会调用didWriteValueForCharacteristic
+        CBCharacteristicWriteType type = CBCharacteristicWriteWithoutResponse;
+        if (charact.properties & CBCharacteristicPropertyWrite) {
+            type = CBCharacteristicWriteWithResponse;
         }
         [self.cbPeripheral writeValue:data forCharacteristic:charact type:type];  ;
     }else{
@@ -103,6 +104,24 @@
          }
     }
 }
+
+- (void)readValueForCharacteristicWithUUIDStr:(NSString*__nonnull)wuuid;
+{
+    CBCharacteristic * charact = [self getCharacteristicWithUUID:wuuid];
+    if (!charact) {
+        NSLog(@"未找到特征所以没法写");
+        return;
+    }
+    if (charact.properties & CBCharacteristicPropertyRead){
+        [self.cbPeripheral readValueForCharacteristic:charact];
+    }else{
+        NSLog(@"所使用的特征类型并不是 read类型");
+    }
+  }
+
+ 
+
+
  
 #pragma  - mark private
 

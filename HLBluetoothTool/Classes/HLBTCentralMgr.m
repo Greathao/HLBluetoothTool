@@ -52,7 +52,7 @@
 #pragma -mark public
 - (void)startScan
 {
-    if (self.cbCentralManager.state!=CBManagerStatePoweredOn){ NSLog(@"设备不支持蓝牙或未开启"); return;}
+    if (self.cbCentralManager.state!=CBCentralManagerStatePoweredOn){ NSLog(@"设备不支持蓝牙或未开启"); return;}
     if (self.cbCentralManager.isScanning){NSLog(@"当前正在扫描中"); return;}
 
     self.btfilter.filterRulesDelegate = self.filterRulesDelegate;
@@ -137,8 +137,8 @@
 }
 - (void)addDiscoverPeripherals:(CBPeripheral *)peripheral{
     if (![self.discoverPeripherals containsObject:peripheral]) {
-        for (CBPeripheral * peripheral in self.discoverPeripherals) {
-            if ([peripheral.identifier.UUIDString isEqualToString:peripheral.identifier.UUIDString]) {
+        for (CBPeripheral * periph in self.discoverPeripherals) {
+            if ([periph.identifier.UUIDString isEqualToString:peripheral.identifier.UUIDString]) {
                 return;
             }
         }
@@ -147,8 +147,8 @@
 }
 - (void)addConnectedPeripheral:(CBPeripheral *)peripheral {
     if (![self.connectedPeripherals containsObject:peripheral]) {
-        for (CBPeripheral * peripheral in self.discoverPeripherals) {
-            if ([peripheral.identifier.UUIDString isEqualToString:peripheral.identifier.UUIDString]) {
+        for (CBPeripheral * periph in self.discoverPeripherals) {
+            if ([periph.identifier.UUIDString isEqualToString:peripheral.identifier.UUIDString]) {
                 return;
             }
         }
@@ -157,8 +157,8 @@
 }
 - (void)deleteConnectedPeripheral:(CBPeripheral *)peripheral{
     if ([self.connectedPeripherals containsObject:peripheral]) {
-        for (CBPeripheral * peripheral in self.discoverPeripherals) {
-            if ([peripheral.identifier.UUIDString isEqualToString:peripheral.identifier.UUIDString]) {
+        for (CBPeripheral * periph in self.discoverPeripherals) {
+            if ([periph.identifier.UUIDString isEqualToString:peripheral.identifier.UUIDString]) {
                 [self.connectedPeripherals removeObject:peripheral];
                  return;
             }
